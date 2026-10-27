@@ -2,7 +2,7 @@
 
 Make existing Home Assistant color lights react to LedFx audio effects. This custom integration receives a **single RGB pixel over DDP** and forwards its color and intensity to a selected `light` entity inside Home Assistant.
 
-LedFx still runs on your computer and captures the music there. The bridge runs in Home Assistant, starts with it, and needs **no Windows app and no Home Assistant token**. It works alongside `hass-ledfx`; that integration is not required.
+LedFx still runs on your computer and captures the music there. The bridge runs in Home Assistant, starts with it. It works alongside `hass-ledfx`; that integration is not required.
 
 [Italiano](README.it.md) · [Changelog](CHANGELOG.md)
 
