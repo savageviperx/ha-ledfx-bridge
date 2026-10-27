@@ -1,0 +1,13 @@
+{
+  "domain": "ledfx_bridge",
+  "name": "LedFx HA Bridge",
+  "codeowners": ["@savageviperx"],
+  "config_flow": true,
+  "dependencies": ["light"],
+  "documentation": "https://github.com/savageviperx/ha-ledfx-bridge",
+  "integration_type": "helper",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/savageviperx/ha-ledfx-bridge/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

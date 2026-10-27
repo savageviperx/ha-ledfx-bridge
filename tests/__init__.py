@@ -1,0 +1,1 @@
+"""LedFx HA Bridge tests."""

@@ -1,0 +1,86 @@
+{
+  "title": "LedFx HA Bridge",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add music light",
+        "description": "Create one entry per light and give each entry a different UDP port. In LedFx, add a DDP device with 1 pixel and destination ID 1, directed to the Home Assistant IP and this UDP port. The optional PC IP restricts which source may send frames. No HA token is needed.",
+        "data": {
+          "name": "Name",
+          "entity_id": "Home Assistant light",
+          "port": "DDP UDP port on Home Assistant",
+          "host": "LedFx PC IPv4 address (optional source filter)",
+          "web_port": "LedFx web interface port"
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure music light",
+        "description": "Create one entry per light and give each entry a different UDP port. In LedFx, add a DDP device with 1 pixel and destination ID 1, directed to the Home Assistant IP and this UDP port. The optional PC IP restricts which source may send frames. No HA token is needed.",
+        "data": {
+          "name": "Name",
+          "entity_id": "Home Assistant light",
+          "port": "DDP UDP port on Home Assistant",
+          "host": "LedFx PC IPv4 address (optional source filter)",
+          "web_port": "LedFx web interface port"
+        }
+      }
+    },
+    "error": {
+      "empty_name": "Enter a name.",
+      "invalid_ip": "Enter an IPv4 address only, or leave blank.",
+      "light_missing": "Select an existing light entity.",
+      "light_unavailable": "This light is unavailable. Restore it in its own integration first.",
+      "color_unsupported": "This entity does not support color control.",
+      "port_in_use": "Another mapping already uses this UDP port. Choose a different port.",
+      "light_in_use": "This light already has a mapping. Reconfigure that entry instead."
+    },
+    "abort": {
+      "already_configured": "This light is already configured.",
+      "reconfigure_successful": "Configuration updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Synchronization settings",
+        "description": "Defaults: up to 20 action starts per second, 4 concurrent actions. Frames arriving while busy replace older frames. More starts do not guarantee faster physical Tuya updates. The sync switch restores its last state after a restart; the default below applies when no previous state exists.",
+        "data": {
+          "max_fps": "Maximum outgoing updates per second",
+          "max_inflight": "Maximum concurrent light actions",
+          "threshold": "Minimum RGB change (1–255)",
+          "start_enabled": "Enable synchronization when no previous state exists"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "sync": {
+        "name": "Music synchronization"
+      }
+    },
+    "binary_sensor": {
+      "receiving": {
+        "name": "Receiving LedFx"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "disabled": "Disabled",
+          "waiting": "Waiting for LedFx",
+          "streaming": "Streaming",
+          "backoff": "Pausing after an error",
+          "target_unavailable": "Target light unavailable"
+        }
+      },
+      "send_rate": {
+        "name": "Outgoing update rate"
+      },
+      "latency": {
+        "name": "Light action latency"
+      }
+    }
+  }
+}

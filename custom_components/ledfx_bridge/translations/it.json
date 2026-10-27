@@ -1,0 +1,86 @@
+{
+  "title": "LedFx HA Bridge",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aggiungi luce musicale",
+        "description": "Crea un’associazione per ogni luce, con una porta UDP diversa. In LedFx aggiungi un dispositivo DDP con 1 pixel e destinazione 1, diretto all’IP di Home Assistant e a questa porta UDP. L’IP facoltativo del PC limita la sorgente dei pacchetti. Non serve un token HA.",
+        "data": {
+          "name": "Nome",
+          "entity_id": "Luce di Home Assistant",
+          "port": "Porta UDP DDP su Home Assistant",
+          "host": "Indirizzo IPv4 del PC LedFx (filtro sorgente facoltativo)",
+          "web_port": "Porta dell’interfaccia web LedFx"
+        }
+      },
+      "reconfigure": {
+        "title": "Riconfigura luce musicale",
+        "description": "Crea un’associazione per ogni luce, con una porta UDP diversa. In LedFx aggiungi un dispositivo DDP con 1 pixel e destinazione 1, diretto all’IP di Home Assistant e a questa porta UDP. L’IP facoltativo del PC limita la sorgente dei pacchetti. Non serve un token HA.",
+        "data": {
+          "name": "Nome",
+          "entity_id": "Luce di Home Assistant",
+          "port": "Porta UDP DDP su Home Assistant",
+          "host": "Indirizzo IPv4 del PC LedFx (filtro sorgente facoltativo)",
+          "web_port": "Porta dell’interfaccia web LedFx"
+        }
+      }
+    },
+    "error": {
+      "empty_name": "Inserisci un nome.",
+      "invalid_ip": "Inserisci solo un indirizzo IPv4 oppure lascia vuoto.",
+      "light_missing": "Seleziona un’entità luce esistente.",
+      "light_unavailable": "Questa luce non è disponibile. Ripristinala prima nella sua integrazione.",
+      "color_unsupported": "Questa entità non supporta il controllo del colore.",
+      "port_in_use": "Un’altra associazione usa già questa porta UDP. Scegli una porta diversa.",
+      "light_in_use": "Questa luce è già associata. Riconfigura l’associazione esistente."
+    },
+    "abort": {
+      "already_configured": "Questa luce è già configurata.",
+      "reconfigure_successful": "Configurazione aggiornata."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Impostazioni di sincronizzazione",
+        "description": "Valori iniziali: fino a 20 invii al secondo e 4 chiamate contemporanee. Durante l’attesa si conserva solo il colore più recente. Più invii non garantiscono aggiornamenti fisici più rapidi di Tuya. L’interruttore ripristina l’ultimo stato al riavvio; il valore sotto si applica in assenza di uno stato precedente.",
+        "data": {
+          "max_fps": "Massimo numero di invii al secondo",
+          "max_inflight": "Numero massimo di chiamate contemporanee",
+          "threshold": "Variazione minima RGB (1–255)",
+          "start_enabled": "Attiva sincronizzazione in assenza di uno stato precedente"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "sync": {
+        "name": "Sincronizzazione musicale"
+      }
+    },
+    "binary_sensor": {
+      "receiving": {
+        "name": "Ricezione LedFx"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Stato",
+        "state": {
+          "disabled": "Disattivato",
+          "waiting": "In attesa di LedFx",
+          "streaming": "In esecuzione",
+          "backoff": "Pausa dopo un errore",
+          "target_unavailable": "Luce di destinazione non disponibile"
+        }
+      },
+      "send_rate": {
+        "name": "Frequenza degli invii"
+      },
+      "latency": {
+        "name": "Latenza delle chiamate luce"
+      }
+    }
+  }
+}
