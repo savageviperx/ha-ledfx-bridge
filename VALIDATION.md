@@ -10,6 +10,10 @@ Initial implementation tested on Linux in two real Home Assistant environments:
 `ruff check .`, `ruff format --check .` and the 25-test pytest suite pass.
 The GitHub test workflow repeats both environments using pinned requirements.
 
+For v0.1.1, Home Assistant 2026.10.4's brand loader was also checked directly:
+it detects the bundled `brand/` folder and serves the icon for all eight normal,
+dark, logo and high-resolution image names through its supported fallbacks.
+
 Tests exercise Home Assistant's actual config flow, options flow, reconfigure
 flow, entity registration, restored switch state, action registry, setup retry
 and unload machinery. They use local UDP sockets and simulated light actions.

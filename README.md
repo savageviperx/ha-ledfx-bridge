@@ -20,6 +20,8 @@ Requires Home Assistant **2025.6 or newer**, HACS, LedFx with DDP output, and a 
 
 This is a HACS **custom repository**. Publication on GitHub does not automatically add it to HACS's default catalog.
 
+The integration includes its own icon from v0.1.1. Home Assistant **2026.3+** displays it from the local `brand/` folder, with automatic logo and dark-theme fallbacks. After updating in HACS, restart HA and refresh the browser/app. Earlier HA versions can still run the bridge but cannot display its bundled icon.
+
 ### Manual installation
 
 Copy `custom_components/ledfx_bridge` into your HA configuration directory under `custom_components/`, restart HA, then add the integration as above. Remove it through **Devices & services** first when uninstalling; afterwards remove its files or uninstall through HACS.

@@ -16,6 +16,8 @@ Richiede Home Assistant 2025.6 o successivo e una luce con controllo colore già
 
 Per altre luci aggiungi un’altra associazione, con una porta diversa: 4049, 4050 e così via. Le porte e le entità duplicate vengono rifiutate. Il repository va aggiunto manualmente: la pubblicazione su GitHub non equivale all’inserimento nel catalogo predefinito HACS.
 
+Dalla v0.1.1 è inclusa l’icona dell’app, visualizzata localmente da **Home Assistant 2026.3 o successivo** anche come logo e nei temi scuri. Dopo l’aggiornamento da HACS, riavvia HA e aggiorna la pagina o l’app. Le versioni HA precedenti possono usare il bridge, ma non mostrano l’icona inclusa.
+
 ## Configurazione LedFx
 
 Per ogni luce crea un dispositivo **DDP**:

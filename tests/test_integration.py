@@ -204,7 +204,7 @@ def test_hacs_metadata_and_translation_keys():
     integration = root / "custom_components" / DOMAIN
     manifest = json.loads((integration / "manifest.json").read_text())
     assert manifest["domain"] == DOMAIN
-    assert manifest["version"] == "0.1.0"
+    assert manifest["version"] == "0.1.1"
     english = json.loads((integration / "translations/en.json").read_text())
     italian = json.loads((integration / "translations/it.json").read_text())
 

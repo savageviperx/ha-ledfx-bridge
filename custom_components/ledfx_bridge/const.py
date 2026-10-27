@@ -2,7 +2,7 @@
 
 DOMAIN = "ledfx_bridge"
 NAME = "LedFx HA Bridge"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 CONF_WEB_PORT = "web_port"
 CONF_MAX_FPS = "max_fps"
 CONF_MAX_INFLIGHT = "max_inflight"
